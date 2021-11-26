@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TasksService } from './tasks/tasks.service';
 //! Importamos el service
-import {HttpClientModule} from '@angular/common/http';
+
 //! Importamos el httpModule
 
 
@@ -17,11 +17,11 @@ import {HttpClientModule} from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
-    TasksService,
-    HttpClientModule
+    TasksService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TasksService } from './tasks.service';
 
 @Component({
   selector: 'app-tasks',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TasksComponent implements OnInit {
 
-  constructor() { }
+title: string = ""
+
+  constructor(private _HttpService: TasksService) { 
+  }
 
   ngOnInit(): void {
   }
+
+  findTask(event:any):void{
+    event.preventDefault();
+    
+    this.title = event.target.title.value;
+
+    this._HttpService.selectTask(this.title);
+
+  }
+
+
 
 }
