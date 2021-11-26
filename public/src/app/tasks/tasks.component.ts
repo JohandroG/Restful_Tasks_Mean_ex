@@ -18,11 +18,8 @@ title: string = ""
 
   findTask(event:any):void{
     event.preventDefault();
-    
     this.title = event.target.title.value;
-
     this._HttpService.selectTask(this.title);
-
   }
 
 
